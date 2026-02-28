@@ -1,0 +1,241 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 200vh;
+    background: radial-gradient(circle at bottom, #0d1b2a, #000814);
+    font-family: Arial, sans-serif;
+    color: white;
+}
+#galaxia {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+#florCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+h1 {
+    position: relative;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 28px;
+}
+
+
+.contenedor-botones {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.contenedor-botones button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.contenedor-botones button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255,255,255,0.6);
+}
+
+
+#botonGlobos {
+    background: linear-gradient(45deg, #ff4e50, #fc913a);
+    color: white;
+}
+
+#botonFlor {
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    color: white;
+}
+
+#mensajeFinal {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: white;
+}
+
+.estrella {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 1s ease-in-out;
+    animation: parpadear 2s infinite alternate;
+}
+
+.estrella:hover {
+    transform: scale(1.8);
+}
+
+@keyframes parpadear {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+.popup {
+    position: absolute;
+    background: rgba(0,0,0,0.85);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid white;
+    text-align: center;
+    animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.media-recuerdo {
+    width: 300px; 
+    max-width: 90%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.texto-recuerdo {
+    margin-top: 10px;
+}
+
+.boton-cerrar {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.globo {
+    position: absolute;
+    bottom: -100px;
+    width: 40px;
+    height: 60px;
+    border-radius: 50%;
+    animation: subir 6s linear forwards;
+}
+
+.globo::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 40px;
+    background: white;
+    top: 60px;
+    left: 50%;
+}
+
+@keyframes subir {
+    from { transform: translateY(0); }
+    to { transform: translateY(-120vh); }
+}
+
+.flor {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    margin: 50px auto;
+    animation: crecer 1s ease-out forwards;
+}
+
+.petalo {
+    position: absolute;
+    width: 60px;
+    height: 100px;
+    background: pink;
+    border-radius: 50%;
+    top: 40px;
+    left: 70px;
+    transform-origin: bottom center;
+}
+
+.p1 { transform: rotate(0deg) translateY(-50px); }
+.p2 { transform: rotate(60deg) translateY(-50px); }
+.p3 { transform: rotate(120deg) translateY(-50px); }
+.p4 { transform: rotate(180deg) translateY(-50px); }
+.p5 { transform: rotate(240deg) translateY(-50px); }
+.p6 { transform: rotate(300deg) translateY(-50px); }
+
+.centro {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: yellow;
+    border-radius: 50%;
+    top: 70px;
+    left: 65px;
+    z-index: 2;
+}
+
+.tallo {
+    position: absolute;
+    width: 8px;
+    height: 120px;
+    background: green;
+    top: 130px;
+    left: 96px;
+}
+
+@keyframes crecer {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.pantalla-final {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(145, 26, 26);
+    font-size: 28px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+    z-index: 10;
+}
+
+.pantalla-final.activa {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.corazon {
+    font-size: 60px;
+    margin-top: 20px;
+    animation: latir 1s infinite;
+}
+
+@keyframes latir {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+.btn{
+    color: white;
+    background-color: #fc913a;
+    border: none;
+
+}
